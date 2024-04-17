@@ -70,7 +70,7 @@ class WishListData {
   getAppTitle() {
     // APIを叩きゲームタイトルを取得する
     try {
-      const url = `http://store.steampowered.com/api/appdetails?appids=${this.appid}&l=japanese`;
+      const url = `http://store.steampowered.com/api/appdetails?appids=${this.appid}`;
       const res = UrlFetchApp.fetch(url);
 
       // JSON 形式に変換する
