@@ -28,7 +28,7 @@ function removeSymbolWishListMain() {
   Logger.log(`Check completed. wishlist targetCount = ${targetCount}`);
 
   function removeSymbol(str) {
-    return str.replace(/[^0-9A-Za-z\u3041-\u3096\u30A1-\u30FA\u4E00-\u9FFF\uFF41-\uFF5A\uFF21-\uFF3A0-9]/g, '');
+    return str.replace(/[^0-9A-Za-z\u3041-\u3096\u30A1-\u30FA\u4E00-\u9FFF\uFF41-\uFF5A\uFF21-\uFF3A&]/g, '');
   }
 
   // カラム名取得

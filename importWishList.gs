@@ -43,7 +43,7 @@ function importWishListMain() {
             break;
           case 'added':
             sheetSteamWishList.getRange(lastRow, addedColumn).setNumberFormat('@');
-            sheetSteamWishList.getRange(lastRow, addedColumn).setValue(obj[key]);
+            sheetSteamWishList.getRange(lastRow, addedColumn).setValue(epochToDate(obj[key]));
             break;
           default:
             Logger.log(`Import failed. Invalid object key. appid = ${obj['appid']}`);
@@ -86,4 +86,10 @@ function importWishListMain() {
     var columnIndex = headers.indexOf(columnName) + 1;
     return columnIndex;
   }
+
+  function epochToDate(epoch) {
+    const date = new Date(epoch * 1000);
+    return date.toLocaleDateString('ja-JP', { timeZone: 'Asia/Tokyo' });
+  }
+
 }
